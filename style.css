@@ -1,0 +1,146 @@
+div.question {
+    margin: 15px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+div.answer {
+    margin: 15px;
+}
+
+span.correct {
+    color: green;
+}
+
+span.incorrect {
+    color: red;
+}
+
+div.question input {
+    width: 200px;
+    height: 150px;
+    font-size: 100px;
+    margin: 10px;
+    padding-left: 70px;
+}
+
+div.question label {
+    font-size: 5em;
+    margin: 30px;
+}
+
+div.question button {
+    display: inline-block;
+    padding: 0.7em 1.4em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    border: none;
+    outline: none;
+}
+
+div.question button:active {
+    top: 0.1em;
+    border: none;
+    outline: none;
+}
+
+@media all and (max-width:30em) {
+    div.question button {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+
+.correct {
+    font-weight: bold;
+}
+
+.incorrect {
+    font-weight: bold;
+}
+
+
+
+li {
+    font-family: 'Bebas Neue', cursive;
+    list-style-type: none;
+}
+
+.total {
+    color: rgb(146, 0, 146);
+}
+
+.corAns {
+    color: rgb(19, 133, 66);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grey {
+    background-color: dimgrey;
+}
+
+.buttons {
+    padding: 0.7em 1.4em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    right: 0px;
+    float: right;
+    outline: none;
+    border: none;
+}
+
+.buttons:active {
+    top: 0.1em;
+
+}
+
+@media all and (max-width:30em) {
+    .buttons {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+
+#label{
+  position: absolute;
+  top:25px;
+  right: 200px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+}
+
+
+.answer{
+    font-size: 30px;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    margin: 50px;
+    overflow: auto;
+    height: 450px;
+    max-width: 100%;
+}
