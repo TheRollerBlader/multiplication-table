@@ -19,14 +19,28 @@ let btns = document.querySelectorAll(".buttons");
 let numberOfProblems = 50;
 let isDone = false;
 let percent;
+
 let labelNumPb = document.querySelector("#label");
 let numOfProbsSelected = false;
 let timer = document.querySelector(".timer");
 let npd = 0;
 
+
 btn1.addEventListener("click", function () {
   numberProblemButton(25);
-  numOfProbsSelected = true;
+  clickInput = true;
+
+})
+
+btn2.addEventListener("click", function () {
+  numberProblemButton(50);
+  clickInput = true;
+
+})
+
+btn3.addEventListener("click", function () {
+  numberProblemButton(100);
+  clickInput = true;
 });
 
 btn2.addEventListener("click", function () {
@@ -54,19 +68,26 @@ function numberProblemButton(number) {
 }
 
 button.addEventListener("click", () => {
-  
   if (!isDone) {
     if (input.value === "") {
-      input.value = "(not answered)";
+      input.value = "(not answered)"
     }
     checkAnswer();
     input.value = "";
     count++;
     if (count === numberOfProblems) {
-      youAreDone();
+      youAreDone()
     }
-    if (!isDone) newQuestion(isDone);
+    if (!isDone)
+      newQuestion();
   }
+  // checkAnswer();
+  // input.value = "";
+  // count++;
+  // if (count === numberOfProblems) {
+  //   youAreDone();
+  // }
+  // if (!isDone) newQuestion(isDone);
 });
 
 input.addEventListener("keyup", function (event) {
@@ -76,9 +97,9 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
-function newQuestion(flag) {
-  ran1 = Math.round(Math.random() * 8) + 2;
-  ran2 = Math.round(Math.random() * 9) + 1;
+function newQuestion() {
+  ran1 = Math.round(Math.random() * 8) + 2
+  ran2 = Math.round(Math.random() * 9) + 1
   r = ran1 * ran2;
   label.innerHTML = `What is ${ran1} x ${ran2}`;
 }
@@ -104,9 +125,8 @@ function drawResponse(ans) {
   ul.innerHTML = "";
   ans.forEach((element) => {
     ul.innerHTML += `<li class="quest" >${element.question}. Your answer is  
-        <span class="${element.isCorrect ? "correct" : "incorrect"}">${
-      element.answer
-    } </span> 
+        <span class="${element.isCorrect ? "correct" : "incorrect"}">${element.answer
+      } </span> 
         </li>`;
   });
   totalScore(ans);

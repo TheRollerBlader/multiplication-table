@@ -1,13 +1,14 @@
+body{
+    
+    overflow: hidden;
+}
 div.question {
     margin: 15px;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 30%;
 }
 
-div.answer {
-    margin: 15px;
-}
 
 span.correct {
     color: green;
@@ -121,7 +122,7 @@ h1 {
 }
 
 .grey {
-    background-color: dimgrey;
+    background-color: snow;
 }
 
 .buttons {
