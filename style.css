@@ -91,31 +91,32 @@ li {
     color: rgb(146, 0, 146);
     display:inline-block;
     transition: all 0.25s;
+    position: absolute;
+    margin: 5px;
+    top:10px;
+    left:40%;
+    border: 2px solid violet;
+    border-radius:5px;
+    padding:5px;
 }
 
-.total:hover{
-    border-radius: 50%;
-    background-color: rgb(146, 0, 146);
-    color: cornflowerblue;
-    cursor:pointer;
-}
+
 
 .corAns {
     color: rgb(19, 133, 66);
     transition: all 0.25s;
     display:inline-block;
     position: absolute;
-    top:30%;
+    top:10px;
     margin: 5px;
-    left:0px;
+    left:46%;
+    border: 2px solid #73AD21;
+    border-radius: 5px;
+    padding:5px;
+    
 }
 
-.corAns:hover{
-    border-radius: 50%;
-    background-color: rgb(19, 133, 66);
-    color:blue;
-    cursor:pointer;
-}
+
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
