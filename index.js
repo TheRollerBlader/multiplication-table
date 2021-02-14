@@ -19,29 +19,42 @@ let btns = document.querySelectorAll(".buttons");
 let numberOfProblems = 50;
 let isDone = false;
 let percent;
+
 let labelNumPb = document.querySelector("#label");
-let clickInput = false;
-let time = 0;
+let numOfProbsSelected = false;
 let timer = document.querySelector(".timer");
 let npd = 0;
+
 
 btn1.addEventListener("click", function () {
   numberProblemButton(25);
   clickInput = true;
-});
+
+})
 
 btn2.addEventListener("click", function () {
   numberProblemButton(50);
   clickInput = true;
-});
+
+})
 
 btn3.addEventListener("click", function () {
   numberProblemButton(100);
   clickInput = true;
 });
 
+btn2.addEventListener("click", function () {
+  numberProblemButton(50);
+  numOfProbsSelected = true;
+});
+
+btn3.addEventListener("click", function () {
+  numberProblemButton(100);
+  numOfProbsSelected = true;
+});
+
 input.addEventListener("click", function () {
-  if (!clickInput) numberProblemButton(25);
+  if (!numOfProbsSelected) numberProblemButton(25);
 });
 
 function numberProblemButton(number) {
@@ -51,23 +64,30 @@ function numberProblemButton(number) {
   btn2.setAttribute("style", "display:none;");
   let string = `Number of problems: ${numberOfProblems}`;
   labelNumPb.innerHTML = string;
-  tenSec();
+
 }
 
 button.addEventListener("click", () => {
-  time = 0;
   if (!isDone) {
     if (input.value === "") {
-      input.value = "(not answered)";
+      input.value = "(not answered)"
     }
     checkAnswer();
     input.value = "";
     count++;
     if (count === numberOfProblems) {
-      youAreDone();
+      youAreDone()
     }
-    if (!isDone) newQuestion(isDone);
+    if (!isDone)
+      newQuestion();
   }
+  // checkAnswer();
+  // input.value = "";
+  // count++;
+  // if (count === numberOfProblems) {
+  //   youAreDone();
+  // }
+  // if (!isDone) newQuestion(isDone);
 });
 
 input.addEventListener("keyup", function (event) {
@@ -77,22 +97,11 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
-function newQuestion(flag) {
-  ran1 = Math.round(Math.random() * 8) + 2;
-  ran2 = Math.round(Math.random() * 9) + 1;
+function newQuestion() {
+  ran1 = Math.round(Math.random() * 8) + 2
+  ran2 = Math.round(Math.random() * 9) + 1
   r = ran1 * ran2;
   label.innerHTML = `What is ${ran1} x ${ran2}`;
-}
-
-function tenSec(num) {
-  setInterval(() => {
-    time++;
-    timer.innerHTML = time;
-    if (time === 10) {
-      time = 0;
-      button.click();
-    }
-  }, 1000);
 }
 
 function checkAnswer() {
@@ -116,9 +125,8 @@ function drawResponse(ans) {
   ul.innerHTML = "";
   ans.forEach((element) => {
     ul.innerHTML += `<li class="quest" >${element.question}. Your answer is  
-        <span class="${element.isCorrect ? "correct" : "incorrect"}">${
-      element.answer
-    } </span> 
+        <span class="${element.isCorrect ? "correct" : "incorrect"}">${element.answer
+      } </span> 
         </li>`;
   });
   totalScore(ans);
