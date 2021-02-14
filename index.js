@@ -19,42 +19,38 @@ let btns = document.querySelectorAll(".buttons");
 let numberOfProblems = 50;
 let isDone = false;
 let percent;
-
 let labelNumPb = document.querySelector("#label");
 let numOfProbsSelected = false;
 let timer = document.querySelector(".timer");
 let npd = 0;
 
-
 btn1.addEventListener("click", function () {
-  numberProblemButton(25);
-  clickInput = true;
-
-})
-
-btn2.addEventListener("click", function () {
-  numberProblemButton(50);
-  clickInput = true;
-
-})
-
-btn3.addEventListener("click", function () {
-  numberProblemButton(100);
+  numberProblemButton(10);
   clickInput = true;
 });
 
 btn2.addEventListener("click", function () {
-  numberProblemButton(50);
+  numberProblemButton(15);
+  clickInput = true;
+});
+
+btn3.addEventListener("click", function () {
+  numberProblemButton(30);
+  clickInput = true;
+});
+
+btn2.addEventListener("click", function () {
+  numberProblemButton(15);
   numOfProbsSelected = true;
 });
 
 btn3.addEventListener("click", function () {
-  numberProblemButton(100);
+  numberProblemButton(30);
   numOfProbsSelected = true;
 });
 
 input.addEventListener("click", function () {
-  if (!numOfProbsSelected) numberProblemButton(25);
+  if (!numOfProbsSelected) numberProblemButton(10);
 });
 
 function numberProblemButton(number) {
@@ -64,22 +60,20 @@ function numberProblemButton(number) {
   btn2.setAttribute("style", "display:none;");
   let string = `Number of problems: ${numberOfProblems}`;
   labelNumPb.innerHTML = string;
-
 }
 
 button.addEventListener("click", () => {
   if (!isDone) {
     if (input.value === "") {
-      input.value = "(not answered)"
+      input.value = "(not answered)";
     }
     checkAnswer();
     input.value = "";
     count++;
     if (count === numberOfProblems) {
-      youAreDone()
+      youAreDone();
     }
-    if (!isDone)
-      newQuestion();
+    if (!isDone) newQuestion();
   }
   // checkAnswer();
   // input.value = "";
@@ -98,8 +92,8 @@ input.addEventListener("keyup", function (event) {
 });
 
 function newQuestion() {
-  ran1 = Math.round(Math.random() * 8) + 2
-  ran2 = Math.round(Math.random() * 9) + 1
+  ran1 = Math.round(Math.random() * 8) + 2;
+  ran2 = Math.round(Math.random() * 9) + 1;
   r = ran1 * ran2;
   label.innerHTML = `What is ${ran1} x ${ran2}`;
 }
@@ -125,8 +119,9 @@ function drawResponse(ans) {
   ul.innerHTML = "";
   ans.forEach((element) => {
     ul.innerHTML += `<li class="quest" >${element.question}. Your answer is  
-        <span class="${element.isCorrect ? "correct" : "incorrect"}">${element.answer
-      } </span> 
+        <span class="${element.isCorrect ? "correct" : "incorrect"}">${
+      element.answer
+    } </span> 
         </li>`;
   });
   totalScore(ans);
@@ -145,10 +140,10 @@ newQuestion();
 
 function youAreDone() {
   isDone = true;
-  done.innerHTML = ` <h1 style="color:#00ff00; position:absolute; top:60%; left:70%; font-size:50px; background-color: grey;" >YOU ARE DONE</h1>`;
+  done.innerHTML = ` <h1>YOU ARE DONE</h1>`;
   label.innerHTML = "";
 
   if (percent === 100) {
-    congrats.innerHTML = "";
+    congrats.innerHTML = "you got every thing right";
   }
 }
