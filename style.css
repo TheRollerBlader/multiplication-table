@@ -1,11 +1,11 @@
 body{
     
-    overflow: hidden;
+    overflow: auto;
 }
 div.question {
     margin: 15px;
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 30%;
 }
 
@@ -19,15 +19,15 @@ span.incorrect {
 }
 
 div.question input {
-    width: 200px;
-    height: 150px;
-    font-size: 100px;
+    width: 100px;
+    height: 120px;
+    font-size: 50px;
     margin: 10px;
     padding-left: 70px;
 }
 
 div.question label {
-    font-size: 5em;
+    font-size: 75px;
     margin: 30px;
 }
 
@@ -91,31 +91,32 @@ li {
     color: rgb(146, 0, 146);
     display:inline-block;
     transition: all 0.25s;
+    position: absolute;
+    margin: 5px;
+    top: 100px;
+    left: 36%;
+    border: 2px solid violet;
+    border-radius:5px;
+    padding:5px;
 }
 
-.total:hover{
-    border-radius: 50%;
-    background-color: rgb(146, 0, 146);
-    color: cornflowerblue;
-    cursor:pointer;
-}
+
 
 .corAns {
     color: rgb(19, 133, 66);
     transition: all 0.25s;
     display:inline-block;
     position: absolute;
-    top:30%;
+    top:100px;
     margin: 5px;
-    left:0px;
+    left:46%;
+    border: 2px solid #73AD21;
+    border-radius: 5px;
+    padding:5px;
+    
 }
 
-.corAns:hover{
-    border-radius: 50%;
-    background-color: rgb(19, 133, 66);
-    color:blue;
-    cursor:pointer;
-}
+
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -140,7 +141,7 @@ h1 {
     text-align: center;
     position: relative;
     right: 0px;
-    top: 5px;
+    top: 21px;
     float: right;
     outline: none;
     border: none;
@@ -167,7 +168,7 @@ h1 {
 
 #label{
   position: absolute;
-  top:25px;
+  top: 25px;
   right: 200px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bolder;
@@ -175,12 +176,52 @@ h1 {
 
 
 .answer{
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
-    left: 40%;
-    top: 50%;
+    right: 10%;
+    top: 10%;
     margin: 50px;
     overflow: auto;
-    height: 450px;
-    max-width: 100%;
+    height: 500px;
+    width:125;
+    
 }
+
+.youaredone{
+    display:inline-block;
+    border-radius: 5px;
+    font-size: 20px;
+    position: absolute;
+    text-shadow: 2px 2px  rgb(0, 132, 255);
+    color:cornflowerblue;
+    top:43.555%;
+    left:14.45%;
+    margin:5px;
+    padding:0px;
+}
+
+.congrats{
+    display:inline-flex;
+    text-shadow: 2px 2px teal;
+    color: darkturquoise;
+    position: absolute;
+    top:300px;
+    left:8%;
+}
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+html { font-size:100%; } 
+
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} } 
